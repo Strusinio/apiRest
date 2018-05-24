@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="jdbc:hsqldb:hsql://localhost/workdb">
+  <database-model serializer="dbm" rdbms="HSQLDB" format-version="4.9">
+    <root id="1">
+      <ServerVersion>2.4</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="PUBLIC">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="INFORMATION_SCHEMA"/>
+    <schema id="4" parent="2" name="PUBLIC">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="5" parent="2" name="SYSTEM_LOBS"/>
+    <table id="6" parent="4" name="COMMENT"/>
+    <table id="7" parent="4" name="PRODUCT"/>
+    <column id="8" parent="6" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="9" parent="6" name="DESCRIPTION">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="10" parent="6" name="PRODUCT_ID">
+      <Position>3</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <index id="11" parent="6" name="SYS_IDX_SYS_PK_10939_10940">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="12" parent="6" name="SYS_IDX_FK_COMMENT_PRODUCT_ID_10943">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PRODUCT_ID</ColNames>
+    </index>
+    <key id="13" parent="6" name="SYS_PK_10939">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="14" parent="6" name="FK_COMMENT_PRODUCT_ID">
+      <ColNames>PRODUCT_ID</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>PRODUCT</RefTableName>
+      <RefKeyName>SYS_PK_10935</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="15" parent="7" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="7" name="NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="17" parent="7" name="PRICE">
+      <Position>3</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="18" parent="7" name="PRODUCTCATEGORY">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="19" parent="7" name="SYS_IDX_SYS_PK_10935_10936">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="20" parent="7" name="SYS_PK_10935">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
